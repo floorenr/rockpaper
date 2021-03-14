@@ -2,7 +2,6 @@
 let computerSelection;
 let winCount = 0;
 let loseCount = 0;
-game ()
 function computerPlay() {
     computerSelection = Math.floor(Math.random() * 3);
     if (computerSelection === 0) {computerSelection = 'rock';}
@@ -11,6 +10,10 @@ function computerPlay() {
 }
 function playRound() {
     let userSelection = prompt('Rock, paper or scissors?');
+    if ((typeof userSelection) !== "string") {
+        alert ('incorrect input');
+        return playRound ();
+    }
     userSelection = userSelection.toLowerCase();
     computerPlay ();
     if (!['rock','paper','scissors'].includes(userSelection)) {
