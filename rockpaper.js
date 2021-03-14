@@ -27,7 +27,7 @@ function playRound() {
              (userSelection === 'paper' && computerSelection === 'scissors') ||
              (userSelection === 'scissors' && computerSelection === 'rock')) {
                 loseCount = loseCount + 1; 
-                return ('You lost! Computer\'s ' + computerSelection + ' beats your ' + userSelection + '.')
+                return ('You lose! Computer\'s ' + computerSelection + ' beats your ' + userSelection + '.')
     }
     else { winCount = winCount + 1;
         return ('You won! Your ' + userSelection + ' beats computer\'s ' + computerSelection + '.')
@@ -38,7 +38,15 @@ function game() {
     for (i = 0; i < 5; i++) {
         console.log(playRound ());
       }
-    console.log(winCount, loseCount);
+    if (winCount > loseCount) {
+        console.log('You win ' + winCount + ' to ' + loseCount + '!');
+    }
+    else if (winCount < loseCount) {
+        console.log('You lose ' + loseCount + ' to ' + winCount + '.');
+    }
+    else {
+        console.log('You tie ' + loseCount + ' to ' + winCount + '.');
+    }
     winCount = 0;
     loseCount = 0;
 }
