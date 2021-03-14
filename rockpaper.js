@@ -1,4 +1,3 @@
-// 0 = rock, 1 = paper, 2, scissors 
 let computerSelection;
 let winCount = 0;
 let loseCount = 0;
@@ -27,10 +26,12 @@ function playRound() {
              (userSelection === 'paper' && computerSelection === 'scissors') ||
              (userSelection === 'scissors' && computerSelection === 'rock')) {
                 loseCount = loseCount + 1; 
-                return ('You lose! Computer\'s ' + computerSelection + ' beats your ' + userSelection + '.')
+                return ('You lose! Computer\'s ' + computerSelection + 
+                        ' beats your ' + userSelection + '.')
     }
     else { winCount = winCount + 1;
-        return ('You won! Your ' + userSelection + ' beats computer\'s ' + computerSelection + '.')
+        return ('You won! Your ' + userSelection + ' beats computer\'s ' + 
+                computerSelection + '.')
     }
 }
 function game() {
