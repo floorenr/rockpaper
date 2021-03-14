@@ -6,7 +6,7 @@ function computerPlay () {
     else if (computerSelection === 1) {computerSelection = 'paper';}
     else {computerSelection = 'scissors';}
 }
-function startGame () {
+function playRound () {
     let userSelection = prompt('Rock, paper or scissors?');
     userSelection = userSelection.toLowerCase();
     computerPlay ();
