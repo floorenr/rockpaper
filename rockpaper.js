@@ -34,5 +34,7 @@ function game() {
     for (i = 0; i < 5; i++) {
         console.log(playRound ());
       }
-    console.log(winCount, loseCount)
+    console.log(winCount, loseCount);
+    winCount = 0;
+    loseCount = 0;
 }
