@@ -1,6 +1,7 @@
 let computerSelection;
 let winCount = 0;
 let loseCount = 0;
+let roundCount = 0;
 function computerPlay() {
     computerSelection = Math.floor(Math.random() * 3);
     if (computerSelection === 0) {computerSelection = 'rock';}
@@ -8,6 +9,7 @@ function computerPlay() {
     else {computerSelection = 'scissors';}
 }
 function playRound(e) {
+    roundCount += 1;
     computerPlay ();
     userSelection = e.dataset.sel;
     if (userSelection === computerSelection) {
@@ -29,5 +31,5 @@ function playRound(e) {
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-  button.addEventListener('click', () => (playRound(button)))   
+  button.addEventListener('click', () => roundScore = (playRound(button)))  
 });
