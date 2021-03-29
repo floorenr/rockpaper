@@ -7,19 +7,10 @@ function computerPlay() {
     else if (computerSelection === 1) {computerSelection = 'paper';}
     else {computerSelection = 'scissors';}
 }
-function playRound() {
-    let userSelection = prompt('Rock, paper or scissors?');
-    if ((typeof userSelection) !== "string") {
-        alert ('incorrect input');
-        return playRound ();
-    }
-    userSelection = userSelection.toLowerCase();
+function playRound(e) {
     computerPlay ();
-    if (!['rock','paper','scissors'].includes(userSelection)) {
-        alert ('incorrect input');
-        return playRound ();
-    }
-    else if (userSelection === computerSelection) {
+    userSelection = e.dataset.sel;
+    if (userSelection === computerSelection) {
         return ('It\'s a tie, you both picked ' + userSelection + '.');
     }
     else if ((userSelection === 'rock' && computerSelection === 'paper') || 
@@ -34,3 +25,9 @@ function playRound() {
                 computerSelection + '.')
     }
 }
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => (playRound(button)))   
+});
