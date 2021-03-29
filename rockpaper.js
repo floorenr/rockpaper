@@ -29,7 +29,13 @@ function playRound(e) {
 }
 
 const buttons = document.querySelectorAll('button');
+const score = document.querySelector(".score");
+const outcome = document.querySelector(".outcome")
 
 buttons.forEach((button) => {
-  button.addEventListener('click', () => roundScore = (playRound(button)))  
+  button.addEventListener('click', () => {
+      roundScore = (playRound(button));
+      outcome.textContent += roundScore;
+      
+    })  
 });
