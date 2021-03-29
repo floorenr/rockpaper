@@ -31,13 +31,30 @@ function playRound(e) {
 const buttons = document.querySelectorAll('button');
 const score = document.querySelector(".score");
 const outcome = document.querySelector(".outcome")
-const tBR = document.createElement('br');
+const finalScore = document.querySelector(".finalScore")
+let roundScore = ""
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
-      let roundScore = document.createTextNode(playRound(button));
+      roundScore = document.createTextNode(playRound(button));
       outcome.appendChild(roundScore);
       outcome.appendChild(document.createElement('br'));  
-      
+      document.getElementById("score").innerHTML = (winCount + " - " + 
+            loseCount);
+      if (roundCount===5) {
+        outcome.appendChild(document.createElement('br'));
+        outcome.appendChild(document.createElement('br'));
+        if (winCount === loseCount) {
+            finalScore.textContent += 
+                    "Game Finished. You Tied. Press SPACE to try again.";
+        } else if (winCount > loseCount) {
+            finalScore.textContent += 
+                    "Game Finished. You Win! Press SPACE to try again.";
+        } else {
+            finalScore.textContent += 
+                    "Game Finished. You lose... Press SPACE to try again";
+        }
+      }
     })  
 });
+
