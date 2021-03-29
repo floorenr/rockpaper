@@ -1,1 +1,2 @@
-Project for ODIN online curriculum. Rock, paper, scissors game created to be played in browser console. Skills applied are javascript loops, creating functions, dealing with function scope.
+Second edition of this project for ODIN online curriculum. Rock, paper, scissors game created to be played in browser console. Skills applied are javascript loops, creating functions, dealing with function scope.
+Furthermore applied several DOM manipulations in JavaScript and improved skill and understanding of JavaScript/HTML-interaction, eventListeners and functions.
