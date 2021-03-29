@@ -34,20 +34,3 @@ function playRound() {
                 computerSelection + '.')
     }
 }
-function game() {
-    alert('We\'ll play 5 rounds of rock, paper scissors')
-    for (i = 0; i < 5; i++) {
-        console.log(playRound ());
-      }
-    if (winCount > loseCount) {
-        console.log('You win ' + winCount + ' to ' + loseCount + '!');
-    }
-    else if (winCount < loseCount) {
-        console.log('You lose ' + loseCount + ' to ' + winCount + '.');
-    }
-    else {
-        console.log('You tie ' + loseCount + ' to ' + winCount + '.');
-    }
-    winCount = 0;
-    loseCount = 0;
-}
