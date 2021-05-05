@@ -33,7 +33,6 @@ function playRound(e) {
 }
 
 const buttons = document.querySelectorAll('button');
-const score = document.querySelector(".score");
 const outcome = document.querySelector(".outcome")
 const finalScore = document.querySelector(".finalScore")
 let roundScore = ""
