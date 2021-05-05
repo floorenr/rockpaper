@@ -10,6 +10,10 @@ function computerPlay() {
 }
 function playRound(e) {
     roundCount += 1;
+    if (roundCount===6) {
+        location.reload();
+        return ("");
+    }
     computerPlay ();
     userSelection = e.dataset.sel;
     if (userSelection === computerSelection) {
